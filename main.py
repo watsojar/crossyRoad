@@ -41,7 +41,7 @@ startGame()
 while gameRun:
     time.sleep(0.1)
     screen.update()
-    car.spawnCar()
+    car.spawnCar(scoreboard.level)
     car.moveCars()
     scoreboard.levelText()
     scoreboard.writeHighScore()
@@ -53,7 +53,6 @@ while gameRun:
         player.playerReset()
         scoreboard.nextLevel()
         car.increaseSpeed()
-        car.colorPicker += 1
 
     # Check collision with car
     for z in car.allCars:

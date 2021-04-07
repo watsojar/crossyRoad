@@ -7,7 +7,6 @@ COLORS = [["#d11141", "#00b159", "#00aedb", "#f37735", "#ffc425"],
           ["#c1faff", "#b2eaff", "#a2c9ff", "#d2afff", "#d496ff"]]
 
 
-
 class CarManager(Turtle):
 
     def __init__(self):
@@ -21,15 +20,15 @@ class CarManager(Turtle):
         for car in self.allCars:
             car.backward(self.moveDistance)
 
-    def spawnCar(self):
+    def spawnCar(self, level):
         randomChance = random.randint(1, 6)
         if randomChance == 1:
             newCar = Turtle("square")
             newCar.penup()
             newCar.shapesize(stretch_len=2, stretch_wid=1)
-            if self.colorPicker % 3 == 0:
+            if level % 3 == 0:
                 newCar.color(random.choice(COLORS[0]))
-            if self.colorPicker % 2 == 0:
+            if level % 2 == 0:
                 newCar.color(random.choice(COLORS[1]))
             else:
                 newCar.color(random.choice(COLORS[2]))
